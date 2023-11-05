@@ -25,7 +25,7 @@ const AddJob = () => {
         const maximumPrice = form.maximumPrice.value;
 
 
-        const priceRange = `$${minimumPrice}-${maximumPrice}`;
+        const priceRange = `${minimumPrice}-${maximumPrice}`;
 
 
         const job = {
@@ -88,8 +88,8 @@ const AddJob = () => {
                                 <div className="w-full flex flex-col">
                                     <label className="font-semibold leading-none text-gray-300">Email</label>
                                     <input
-                                    readOnly
-                                    defaultValue={user?.email}
+                                        readOnly
+                                        defaultValue={user?.email}
                                         name="email"
                                         type="text" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
                                 </div>
@@ -117,12 +117,17 @@ const AddJob = () => {
                                         type="text" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
                                 </div>
                                 <div className="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
-                                    <label className="font-semibold leading-none text-gray-300">Category</label>
-                                    <input
-                                        name="name"
-                                        type="text" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
+                                    <label className=" font-semibold leading-none text-gray-300">Category</label>
+                                    <div className="mt-2">
+                                        <select id="name" name="name" className="w-full leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-2 border-0 bg-gray-800 rounded">
+                                            <option>Web Development</option>
+                                            <option>Digital Marketing</option>
+                                            <option>Graphic Design</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
+
                             <div className="md:flex items-center mt-12">
                                 <div className="w-full md:w-1/2 flex flex-col">
                                     <label className="font-semibold leading-none text-gray-300">Minimum Price</label>
@@ -145,8 +150,8 @@ const AddJob = () => {
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 
