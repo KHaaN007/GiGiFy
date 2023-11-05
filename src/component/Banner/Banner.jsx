@@ -1,58 +1,50 @@
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
     return (
-        <div>
-            {/* <!-- Container for demo purpose --> */}
+        // <div className="py-24  flex items-center min-h-screen justify-center   " style={{ backgroundImage: 'url("https://i.ibb.co/Jcf2jTf/4162928.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        //     <div className="rounded-2xl bg-gradient-to-tl from-blue-300  to-indigo-300 opacity-50">
 
-            <div className="container my-24 mx-auto md:px-6">
-                {/* <!-- Section: Design Block --> */}
-                {/* <section className="mb-32 text-center">
-                    <div className="py-12 md:px-12">
-                        <div className="container mx-auto xl:px-32">
-                            <div className="flex grid items-center lg:grid-cols-2">
-                                <div className="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
-                                    <div
-                                        className="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.55)] dark:shadow-black/20 md:px-12 lg:-mr-14">
-                                        <h2 className="mb-16 text-3xl font-bold">
-                                            Trusted by the best companies <br />
-                                            <span className="">around the world</span>
-                                        </h2>
-                                        <div className="grid gap-x-6 md:grid-cols-2">
-                                            <div className="mb-12">
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/landing-page/logo2-1.png"
-                                                    className="neutralscale px-6" />
-                                            </div>
 
-                                            <div className="mb-12">
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/landing-page/logo5-1.png"
-                                                    className="neutralscale px-6" />
-                                            </div>
+        //         <div className="flex shadow-2xl p-5">
+        //             <div className="mx-auto max-w-[43rem]">
+        //                 <div className="text-center">
+        //                     <p className="text-lg font-medium leading-8 text-indigo-600/95">Introducing Design Data Platform</p>
+        //                     <h1 className="mt-3 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">Distribute your brand from&nbsp;design to code</h1>
+        //                     <p className="mt-3 text-lg leading-relaxed text-slate-400">Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets — automatically.</p>
+        //                 </div>
 
-                                            <div className="mb-12 md:mb-0">
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/landing-page/logo3-1.png"
-                                                    className="neutralscale px-6" />
-                                            </div>
+        //                 <div className="mt-6 flex items-center justify-center gap-4">
+        //                     <a href="#" className="transform rounded-md bg-indigo-600/95 px-5 py-3 font-medium text-white transition-colors hover:bg-indigo-700">Get started for free</a>
+        //                     <a href="#" className="transform rounded-md border border-slate-200 px-5 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-50"> Request a demo </a>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>
 
-                                            <div className="">
-                                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/landing-page/logo4-1.png"
-                                                    className="neutralscale px-6" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="md:mb-12 lg:mb-0">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/textures/full/166.jpg"
-                                        className="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="image" />
-                                </div>
-                            </div>
-                        </div>
+
+
+
+        <div className="grid lg:grid-cols-3 mx-auto ">
+            <div className="h-screen flex items-center justify-center">
+                <div className="buttonOne">
+                    <div className="text-center">
+                        <p className="text-lg font-medium leading-8 text-indigo-600/95">Introducing Design Data Platform</p>
+                        <h1 className="mt-3 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">Distribute your brand from&nbsp;design to code</h1>
+                        <p className="mt-3 text-lg leading-relaxed text-slate-400">Specify helps you unify your brand identity by collecting, storing and distributing design tokens and assets — automatically.</p>
                     </div>
-                </section> */}
-                {/* <!-- Section: Design Block --> */}
-            </div>
 
-            {/* <!-- Container for demo purpose --> */}
+                    <div className="mt-6 flex items-center justify-center gap-4">
+                        <Link to='/register' href="#" className="transform rounded-md bg-indigo-600/95 px-5 py-3 font-medium text-white transition-colors hover:bg-indigo-700">Get started for free</Link>
+                        <Link to='/login' href="#" className="transform rounded-md border border-slate-200 px-5 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-50"> Login </Link>
+                    </div>
+                </div>
+            </div>
+            <div className="col-span-2">
+                <img src="https://i.ibb.co/Jcf2jTf/4162928.jpg" alt="" />
+            </div>
         </div>
     );
 };
