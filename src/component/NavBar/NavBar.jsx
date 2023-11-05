@@ -144,7 +144,8 @@ const NavBar = () => {
                                     data-ripple-light="true"
                                 >
                                     <span>Login</span>
-                                </button></Link>
+                                </button>
+                            </Link>
                     }
                 </div>
 
