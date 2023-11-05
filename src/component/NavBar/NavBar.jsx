@@ -76,7 +76,7 @@ const NavBar = () => {
                         href="#"
                         className="mr-5 block cursor-pointer py-1.5 font-serif lg:text-3xl md:text-3xl text-2xl text-white  font-medium leading-relaxed text-inherit antialiased"
                     >
-                        GiGify
+                        GiGiFy
                     </Link>
 
                     <div className='flex justify-center items-center text-center'>
