@@ -88,7 +88,7 @@ const SignIn = () => {
 
         /**Login**/
 
-        <div className="h-screen bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
+        <div className="h-screen bg-gradient-to-tl from-blue-500  to-indigo-500 w-full py-16 px-4">
           
 
             <div className="flex flex-col items-center justify-center">
@@ -103,7 +103,7 @@ const SignIn = () => {
                     />
                 </svg>
 
-                <div className="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
+                <div className="bg-indigo-50 shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
                     <p className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Login your account</p>
                     <p className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Don`t have an account? <Link
                         to='/register'

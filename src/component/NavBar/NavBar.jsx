@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import ButtonOne from "../../RowCssComponent/ButtonOne/ButtonOne";
+
 
 const NavBar = () => {
     const { user, logoutUser } = useContext(AuthContext)
@@ -52,7 +52,7 @@ const NavBar = () => {
                 <NavLink
                     to="/bidRequests"
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "before:ease relative  px-1 py-1 overflow-hidden border border-indigo-500 bg-indigo-500 text-white  transition-all before:absolute before:right-0 before:top-0  text-sm font-normal before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-green-500 hover:before:-translate-x-40 " : "block p-1 font-sans text-sm font-normal text-inherit antialiased "
+                        isPending ? "pending" : isActive ? "before:ease relative  px-1 py-1 overflow-hidden border border-blue-900 bg-blue-900 text-white  transition-all before:absolute before:right-0 before:top-0  text-sm font-normal before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-green-500 hover:before:-translate-x-40 " : "block p-1 font-sans text-sm font-normal text-inherit antialiased "
                     }
                 >
                     <span >Bid Requests</span>
@@ -68,18 +68,18 @@ const NavBar = () => {
     return (
         <div className="mx-auto">
 
-            <div className="navbar ">
+            <div className="navbar bg-gradient-to-tl from-blue-500  to-indigo-500">
                 <div className="flex">
                     <Link
                         to='/'
                         href="#"
-                        className="mr-5 block cursor-pointer py-1.5 font-sans lg:text-3xl md:text-3xl text-2xl  font-medium leading-relaxed text-inherit antialiased"
+                        className="mr-5 block cursor-pointer py-1.5 font-serif lg:text-3xl md:text-3xl text-2xl text-white  font-medium leading-relaxed text-inherit antialiased"
                     >
-                        Road Revolution
+                        GiGify
                     </Link>
 
                     <div className='flex justify-center items-center text-center'>
-                        <img className='w-20' src="https://i.ibb.co/0r5YFTs/Black-And-White-Modern-Car-Wash-Logo-removebg-preview.png" alt="" />
+                        <img className='w-20' src="https://i.ibb.co/thRPLrS/Beige-and-Black-Modern-Handwritten-Art-Design-Animated-Logo-removebg-preview-1.png" alt="" />
                     </div>
                 </div>
                 <div className="lg:mr-96">

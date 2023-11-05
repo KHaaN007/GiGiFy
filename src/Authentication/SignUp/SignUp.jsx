@@ -82,7 +82,7 @@ const SignUp = () => {
 
         <div>
             {/* <!-- component --> */}
-            <div className="h-screen bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
+            <div className="h-screen bg-gradient-to-tl from-blue-500  to-indigo-500 w-full py-16 px-4">
 
                 <div className="flex flex-col items-center justify-center">
                     <svg  className="focus:outline-none" aria-label="logo" role="banner" width="188" height="74" viewBox="0 0 188 74" fill="none" xmlns="http://www.w3.org/2000/svg">
