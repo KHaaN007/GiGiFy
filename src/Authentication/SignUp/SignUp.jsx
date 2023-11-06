@@ -115,21 +115,21 @@ const SignUp = () => {
                             <input
                                 type="text"
                                 id="displayName"
-                                name="displayName" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"  />
+                                name="displayName" className="w-full border border-gray-300 text-black rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"  />
                         </div>
                         <div className="mb-4">
                             <label  className="block text-gray-600">ImageUrl</label>
                             <input
                                 type="text"
                                 id="photoURL"
-                                name="photoURL" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"  />
+                                name="photoURL" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none text-black focus:border-blue-500"  />
                         </div>
                         <div className="mb-4">
                             <label  className="block text-gray-600">Email</label>
                             <input
                                 type="email"
                                 id="useremail"
-                                name="email" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"  />
+                                name="email" className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none text-black focus:border-blue-500"  />
                         </div>
                         {/* <!-- Password Input --> */}
                         <div className="mb-4">
@@ -138,7 +138,7 @@ const SignUp = () => {
                                 type="password"
                                 id="password"
                                 name="password"
-                                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
+                                className="w-full text-black border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" />
                         </div>
                         {/* <!-- Remember Me Checkbox --> */}
                         <div className="mb-4 flex items-center">
