@@ -1,10 +1,20 @@
+import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const JobDetails = () => {
     const data = useLoaderData()
-
+    const { user } = useContext(AuthContext)
 
     const { _id, name, deadline, priceRange, shortDescription, email, jobTitle } = data
+
+
+
+const handleAddBid =()=>{
+    console.log('add bid')
+}
+
+
 
     return (
         <div>
@@ -19,9 +29,9 @@ const JobDetails = () => {
                         <h4 className="text-lg font-semibold">Want to work as a {data.name} ?</h4>
                     </div>
                 </div>
-                <div className="grid grid-cols-12 ml-16 mt-10 bg-white flex items-center">
+                <div className="grid grid-cols-12 lg:ml-16 ml-4 mt-10 bg-white flex items-center">
 
-                    <div className="relative lg:col-span-5 duration-300   hover:-rotate-0 [transform:rotate3d(1_,-1,_1,_60deg)] group border bg-gradient-to-tl from-blue-500  to-indigo-500 border-4  overflow-hidden rounded-2xl relative lg:w-3/4 lg:h-4/5 h-52 w-72  p-5 flex flex-col items-start gap-4">
+                    <div className="relative lg:col-span-5 duration-300   hover:-rotate-0 [transform:rotate3d(1_,-1,_1,_60deg)] group border bg-gradient-to-tl from-blue-500  to-indigo-500 border-4  overflow-hidden rounded-2xl relative lg:w-3/4 lg:h-4/5 h-96 w-96  p-5 flex flex-col items-start gap-4">
                         <div className="text-gray-50">
                             {/* <span className="font-bold text-5xl">Jr</span> */}
                             <h2 className="lg:text-4xl text-xl text-black z-0 px-5 py-3 font-serif font-medium">{name}</h2>
@@ -72,8 +82,9 @@ const JobDetails = () => {
                                 <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
 
                                     <div className="form-item w-full">
-                                        <label className="text-xl ">Price (Your Bidding Amount)</label>
+                                        <label className="text-xl ">Price </label>
                                         <input
+                                        placeholder="Your Bidding Amount"
                                             name="price"
                                             type="text" className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
                                     </div>
@@ -82,19 +93,22 @@ const JobDetails = () => {
                                         <label className="text-xl ">Deadline</label>
                                         <input
                                             name="deadline"
-                                            type="date" className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
+                                            value={deadline}
+                                            type="text" className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
                                     </div>
                                 </div>
                                 <div className="form-item">
                                     <label className="text-xl font-semibold">Email</label>
+
                                     <input
+                                        value={user?.email}
                                         name="email"
-                                        type="text" className="w-full  text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" />
+                                        type="text" className="w-full text-xl font-medium  text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" />
                                 </div>
                                 <div className="form-item">
                                     <label className="text-xl font-semibold">Buyer Email</label>
                                     <input
-                                    value={email}
+                                        value={email}
                                         name="buyerEmail"
                                         type="text" className="w-full  text-black text-opacity-50 rounded text-xl font-medium shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" />
                                 </div>
@@ -102,7 +116,9 @@ const JobDetails = () => {
 
                                 </div>
 
-                                <button className="btn btn-secondary">Bid On The Project</button>
+                                <button
+                                    disabled={user?.email === email}
+                                    className="btn btn-secondary">Bid On The Project</button>
 
                             </form>
                         </div>

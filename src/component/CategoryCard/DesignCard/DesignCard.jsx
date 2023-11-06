@@ -13,8 +13,8 @@ const DesignCard = ({ designJob }) => {
             <div className="wave -z-20"></div>
             <div className="flex lg:flex-row flex-col">
                 <div>
-                    <h2 className="lg:text-4xl text-xl text-black z-0 px-5 py-3 font-serif font-medium">{jobTitle}</h2>
-                    <h4 className="lg:text-2xl text-lg px-5 z-0 font-serif font-medium">Deadline : {deadline}</h4>
+                    <h2 className="lg:text-4xl text-xl text-black z-0 px-5  font-serif font-medium shadow-2xl rounded-xl  py-4">{jobTitle}</h2>
+                    <h4 className="lg:text-2xl text-lg px-5 z-0 pt-2 font-serif font-medium">Deadline : {deadline}</h4>
                     <h3 className="text-2xl font-serif py-3 px-5 z-0 ">Price Range : ${priceRange}</h3>
                     <p className="w-80 font-bold lg:text-xl px-5">{shortDescription}</p>
                 </div>
