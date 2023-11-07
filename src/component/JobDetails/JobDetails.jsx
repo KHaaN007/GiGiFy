@@ -1,18 +1,56 @@
 import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const JobDetails = () => {
     const data = useLoaderData()
     const { user } = useContext(AuthContext)
-
+const userEmail =user?.email
     const { _id, name, deadline, priceRange, shortDescription, email, jobTitle } = data
 
 
 
-const handleAddBid =()=>{
-    console.log('add bid')
-}
+    const handleAddBid = e => {
+        e.preventDefault()
+        // console.log('add bid')
+        const form = e.target
+        const bidPrice = form.bidPrice.value;
+
+
+        const bid = {
+            userEmail,
+            jobTitle,
+            deadline,
+            bidPrice,
+
+        }
+
+
+        fetch('http://localhost:5000/bid', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(bid)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire(
+
+                        'Added Your Bid Succesfully.',
+
+                    )
+                }
+            })
+
+
+
+
+
+    }
 
 
 
@@ -70,7 +108,9 @@ const handleAddBid =()=>{
 
                     <div className="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-7">
                         <div className="px-4 pt-4">
-                            <form action="#" className="flex flex-col space-y-8">
+                            <form
+                                onSubmit={handleAddBid}
+                                action="#" className="flex flex-col space-y-8">
 
                                 <div>
                                     <h3 className="text-2xl font-semibold">Place Your Bid</h3>
@@ -84,8 +124,8 @@ const handleAddBid =()=>{
                                     <div className="form-item w-full">
                                         <label className="text-xl ">Price </label>
                                         <input
-                                        placeholder="Your Bidding Amount"
-                                            name="price"
+                                            placeholder="Your Bidding Amount"
+                                            name="bidPrice"
                                             type="text" className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
                                     </div>
 

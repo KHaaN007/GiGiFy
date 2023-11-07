@@ -1,12 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 
 
-const useJobs = () => {
-
+const useBids = () => {
     const { data, isLoading, isFetching, refetch } = useQuery({
-        queryKey: ['jobsData'],
+        queryKey: ['bidsData'],
         queryFn: async () => {
-            const data = await fetch('http://localhost:5000/jobs');
+            const data = await fetch('http://localhost:5000/bids');
             return await data.json();
         }
     })
@@ -15,4 +14,4 @@ const useJobs = () => {
     return { data, isLoading, isFetching, refetch }
 };
 
-export default useJobs;
+export default useBids;

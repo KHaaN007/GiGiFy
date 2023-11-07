@@ -66,14 +66,6 @@ const AddJob = () => {
 
 
 
-
-
-
-
-
-
-
-
     return (
         <div>
             {/* <!-- component --> */}
@@ -99,7 +91,7 @@ const AddJob = () => {
                                 <div className="w-full md:w-1/2 flex flex-col">
                                     <label className="font-semibold leading-none text-gray-300">Job Title</label>
                                     <input
-                                        name="jobTitle"
+                                        name="name"
                                         type="text" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
                                 </div>
                                 <div className="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
@@ -119,7 +111,7 @@ const AddJob = () => {
                                 <div className="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
                                     <label className=" font-semibold leading-none text-gray-300">Category</label>
                                     <div className="mt-2">
-                                        <select id="name" name="name" className="w-full leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-2 border-0 bg-gray-800 rounded">
+                                        <select id="name" name="jobTitle" className="w-full leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-2 border-0 bg-gray-800 rounded">
                                             <option>Web Development</option>
                                             <option>Digital Marketing</option>
                                             <option>Graphic Design</option>

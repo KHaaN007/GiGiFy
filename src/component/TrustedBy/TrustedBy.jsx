@@ -2,7 +2,7 @@ import ButtonOne from "../../RowCssComponent/ButtonOne/ButtonOne";
 
 const TrustedBy = () => {
     return (
-        <div className="buttonOne">
+        <div className="buttonOne" >
             <ButtonOne></ButtonOne>
             {/* <!-- Container for demo purpose --> */}
             <div className="container mx-auto md:px-6">
