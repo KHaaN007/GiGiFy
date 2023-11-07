@@ -6,14 +6,13 @@ import Swal from "sweetalert2";
 const JobDetails = () => {
     const data = useLoaderData()
     const { user } = useContext(AuthContext)
-const userEmail =user?.email
+    const userEmail = user?.email
     const { _id, name, deadline, priceRange, shortDescription, email, jobTitle } = data
 
 
-
+    const status = 'Pending'
     const handleAddBid = e => {
         e.preventDefault()
-        // console.log('add bid')
         const form = e.target
         const bidPrice = form.bidPrice.value;
 
@@ -23,6 +22,7 @@ const userEmail =user?.email
             jobTitle,
             deadline,
             bidPrice,
+            status
 
         }
 
