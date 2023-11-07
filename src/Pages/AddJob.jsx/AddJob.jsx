@@ -20,7 +20,7 @@ const AddJob = () => {
         const jobTitle = form.jobTitle.value;
         const deadline = form.deadline.value;
         const shortDescription = form.shortDescription.value;
-        const name = form.name.value;
+        const name = form.title.value;
         const minimumPrice = form.minimumPrice.value;
         const maximumPrice = form.maximumPrice.value;
 
@@ -91,7 +91,7 @@ const AddJob = () => {
                                 <div className="w-full md:w-1/2 flex flex-col">
                                     <label className="font-semibold leading-none text-gray-300">Job Title</label>
                                     <input
-                                        name="name"
+                                        name="title"
                                         type="text" className="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded" />
                                 </div>
                                 <div className="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">

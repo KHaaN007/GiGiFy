@@ -126,7 +126,7 @@ const userEmail =user?.email
                                         <input
                                             placeholder="Your Bidding Amount"
                                             name="bidPrice"
-                                            type="text" className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
+                                            type="number" className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
                                     </div>
 
                                     <div className="form-item w-full">
