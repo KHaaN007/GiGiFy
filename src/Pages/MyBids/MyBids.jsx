@@ -11,7 +11,7 @@ const MyBids = () => {
     const { data, isLoading } = useBids()
 
 
-    // console.log(data);
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -113,6 +113,7 @@ const MyBids = () => {
                                                     Complite
                                                     <ShadowBtn></ShadowBtn>
                                                 </button>
+                                               
                                             </td>
 
                                         </tr>)

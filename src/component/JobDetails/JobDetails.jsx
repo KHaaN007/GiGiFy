@@ -22,7 +22,8 @@ const JobDetails = () => {
             jobTitle,
             deadline,
             bidPrice,
-            status
+            status,
+            email
 
         }
 
