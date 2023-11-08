@@ -1,4 +1,5 @@
 
+import TestomonialCard from "../RowCssComponent/TestomonialCard/TestomonialCard";
 import Banner from "../component/Banner/Banner";
 import CategoryTabs from "../component/CategoryTabs/CategoryTabs";
 
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <TrustedBy></TrustedBy>
             <CategoryTabs></CategoryTabs>
+            <TestomonialCard></TestomonialCard>
         </div>
     );
 };
