@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonOne from "../../RowCssComponent/ButtonOne/ButtonOne";
 
 const SignIn = () => {
-
+const goto =useNavigate()
 
     const { googleLogin, signInUser } = useContext(AuthContext)
 
@@ -14,16 +14,12 @@ const SignIn = () => {
             .then(res => {
                 console.log(res.user);
 
-                Swal.fire({
-                    title: 'Successfully Login, Welcome To Road Revolution',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                })
-                location('/')
+                Swal.fire(
+                    'Login Successfully!',
+                    'Welcome to GiGiFy.',
+                    'success'
+                    )
+                    goto('/')
 
 
             })
@@ -52,15 +48,12 @@ const SignIn = () => {
             .then(res => {
                 console.log(res.user);
 
-                Swal.fire({
-                    title: 'Successfully Login, Welcome To Road Revolution',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                })
+                Swal.fire(
+                    'Login Successfully!',
+                    'Welcome to GiGiFy.',
+                    'success',
+                    goto('/')
+                    )
 
                 e.target.reset()
 
@@ -91,7 +84,7 @@ const SignIn = () => {
 
         <div className="h-screen buttonOne bg-gradient-to-tl from-blue-500  to-indigo-500 w-full py-16 px-4">
 
-            
+
 
 
             <div className="flex flex-col items-center justify-center">

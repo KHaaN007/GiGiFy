@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -9,6 +9,7 @@ const JobDetails = () => {
     const userEmail = user?.email
     const { _id, name, deadline, priceRange, shortDescription, email, jobTitle } = data
 
+    const goto = useNavigate()
 
     const status = 'Pending'
     const handleAddBid = e => {
@@ -41,8 +42,10 @@ const JobDetails = () => {
                 if (data.insertedId) {
                     Swal.fire(
 
+                        'Added Bid!',
                         'Added Your Bid Succesfully.',
-
+                        'success',
+                        goto('/myBids')
                     )
                 }
             })

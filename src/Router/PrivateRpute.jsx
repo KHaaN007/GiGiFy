@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Navigate } from "react-router-dom";
+import Loading from "../RowCssComponent/Loading/Loading";
 
 const PrivateRouter = ({ children }) => {
     const { loader, user } = useContext(AuthContext)
 
     if (loader) {
         return <>
-            <div className="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
+            {/* <div className="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
 
                 <section className="bg-white dark:bg-gray-900">
                     <div className="container px-6 py-10 mx-auto animate-pulse">
@@ -75,7 +76,8 @@ const PrivateRouter = ({ children }) => {
                         </div>
                     </div>
                 </section>
-            </div>
+            </div> */}
+            <Loading></Loading>
         </>
     }
 

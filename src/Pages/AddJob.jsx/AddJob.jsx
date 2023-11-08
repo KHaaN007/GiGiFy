@@ -1,9 +1,10 @@
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddJob = () => {
-
+const goto =useNavigate()
 
     const { user } = useContext(AuthContext)
 
@@ -53,10 +54,11 @@ const AddJob = () => {
                 console.log(data);
                 if (data.insertedId) {
                     Swal.fire(
-
-                        'Added Job Succesfully.',
-
-                    )
+                        'Login Successfully!',
+                        'Welcome to GiGiFy.',
+                        'success',
+                        goto('/myPostedJobs')
+                        )
                 }
             })
 

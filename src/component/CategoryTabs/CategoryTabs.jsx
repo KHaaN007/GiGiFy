@@ -30,9 +30,9 @@ const CategoryTabs = () => {
 
 
     return (
-        <div className='lg:w-3/5 w-10/12 mx-auto my-32'>
+        <div className='lg:w-3/5 w-10/12 mx-auto lg:my-32 my-10'>
             <div className='text-center '>
-                <h2 className='lg:text-6xl font-semibold text-indigo-500'>Find Your <span className='lg:text-7xl font-mono'>Dream</span> Job</h2>
+                <h2 className='lg:text-6xl text-5xl font-semibold text-indigo-500'>Find Your <span className='lg:text-7xl font-mono'>Dream</span> Job</h2>
             </div>
 
             <Tabs>

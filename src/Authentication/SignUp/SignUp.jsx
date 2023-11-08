@@ -1,13 +1,15 @@
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
 
     const { setUser, createUser, updatePassword } = useContext(AuthContext)
 
     const [error, setError] = useState('')
+
+    const goto =useNavigate()
 
 
 
@@ -57,15 +59,12 @@ const SignUp = () => {
                         console.log(error);
                     })
                 console.log(res.user);
-                Swal.fire({
-                    title: 'Account Created Successfully',
-                    showclassName: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideclassName: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                })
+                Swal.fire(
+                    'Login Successfully!',
+                    'Welcome to GiGiFy.',
+                    'success',
+                    goto('/')
+                    )
             })
             .catch(error => {
                 console.log(error);
