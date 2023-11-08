@@ -3,9 +3,10 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonOne from "../../RowCssComponent/ButtonOne/ButtonOne";
+import axios from "axios";
 
 const SignIn = () => {
-const goto =useNavigate()
+    const goto = useNavigate()
 
     const { googleLogin, signInUser } = useContext(AuthContext)
 
@@ -14,12 +15,23 @@ const goto =useNavigate()
             .then(res => {
                 console.log(res.user);
 
+
+
+
+                // axios.post('http://localhost:5000/jwt', {r} { withCredentials: true })
+                //     .then(res => {
+                //         console.log(res.data);
+                //     })
+
+
+                
+
                 Swal.fire(
                     'Login Successfully!',
                     'Welcome to GiGiFy.',
                     'success'
-                    )
-                    goto('/')
+                )
+                goto('/')
 
 
             })
@@ -53,7 +65,7 @@ const goto =useNavigate()
                     'Welcome to GiGiFy.',
                     'success',
                     goto('/')
-                    )
+                )
 
                 e.target.reset()
 

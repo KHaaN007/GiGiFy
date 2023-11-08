@@ -4,7 +4,7 @@ import './TestomonialCard.css'
 const TestomonialCard = () => {
     return (
       <div className='mx-auto text-center'>
-        <h2 className='lg:text-6xl text-5xl font-semibold pb-20 text-indigo-500'>Meet Our <span className='lg:text-7xl font-mono'>Genious</span></h2>
+        <h2 className='lg:text-5xl text-5xl font-semibold pb-20 text-indigo-500'>Meet Our <span className='lg:text-7xl font-mono'>Genious</span></h2>
           <div className='container mx-auto grid lg:grid-cols-3 grid-cols-1 gap-5 mb-24'>
             <div className="card">
                 <div className="background">

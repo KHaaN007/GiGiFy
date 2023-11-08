@@ -10,7 +10,7 @@ const MyPostedJobs = () => {
     const { data, isLoading, refetch } = useJobs()
     const { user } = useContext(AuthContext)
 
-    console.log(user);
+    // console.log(user);
     if (isLoading) {
         return <Loading></Loading>
     }

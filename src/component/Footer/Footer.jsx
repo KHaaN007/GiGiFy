@@ -73,12 +73,10 @@ const Footer = () => {
                             <div className="container mx-auto flex flex-col items-center">
                                 <div className="text-center">
                                     <p className="text-xl font-bold">Office Address</p>
-                                    <p className="mt-2">Level-4, 34, Awal Centre, Banani, Dhaka</p>
+                                    <p className="mt-2"> Banani, Dhaka</p>
                                 </div>
                                 <div className="mt-2">
-                                    <p className="text-xl">
-                                        Email: <a href="https://mail.google.com/mail/u/0/">md.amanakhan007@gmail.com</a>
-                                    </p>
+                                    
                                 </div>
                             </div>
                         </div>

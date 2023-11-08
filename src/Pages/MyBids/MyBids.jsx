@@ -18,7 +18,32 @@ const MyBids = () => {
 
     const filterBidEmail = data?.filter(bidEmail => bidEmail?.userEmail === user?.email)
 
- 
+
+
+    const handleComplite = id => {
+
+        const status = 'Complite'
+
+
+        const updateBid = {
+            status
+
+        }
+
+        fetch(`http://localhost:5000/updateBidReq/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(updateBid)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+
+
+    }
+
+
 
 
     return (
@@ -68,7 +93,7 @@ const MyBids = () => {
                                         </th>
                                         <th
                                             className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                            
+
                                         </th>
                                     </tr>
                                 </thead>
@@ -109,11 +134,18 @@ const MyBids = () => {
                                                 </span>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <button className="text-gray-900 whitespace-no-wrap shadow__btn">
-                                                    Complite
-                                                    <ShadowBtn></ShadowBtn>
-                                                </button>
-                                               
+                                                {
+                                                    bid.status === 'In progress' ?
+                                                        <button
+                                                            onClick={() => handleComplite(bid._id)}
+                                                            className="text-gray-900 whitespace-no-wrap shadow__btn">
+                                                            Complite
+                                                            <ShadowBtn></ShadowBtn>
+                                                        </button>
+                                                        : ''
+
+                                                }
+
                                             </td>
 
                                         </tr>)
