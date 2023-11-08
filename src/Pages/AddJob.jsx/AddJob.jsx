@@ -42,7 +42,7 @@ const goto =useNavigate()
         console.log(job);
 
 
-        fetch('http://localhost:5000/job', {
+        fetch('https://full-stack-website-marketplace-server.vercel.app/job', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

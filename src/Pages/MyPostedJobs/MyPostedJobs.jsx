@@ -10,7 +10,7 @@ const MyPostedJobs = () => {
     const { data, isLoading, refetch } = useJobs()
     const { user } = useContext(AuthContext)
 
-    // console.log(user);
+    console.log(user);
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -35,7 +35,7 @@ const MyPostedJobs = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/postedJob/${id}`)
+                axios.delete(`https://full-stack-website-marketplace-server.vercel.app/postedJob/${id}`)
 
                     .then(res => {
                         if (res.data.deletedCount > 0) {

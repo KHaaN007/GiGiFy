@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path: '/bidRequests',
                 element: <PrivateRouter><BidRequests></BidRequests></PrivateRouter>,
-                loader:()=>fetch('http://localhost:5000/bids')
+                loader:()=>fetch('https://full-stack-website-marketplace-server.vercel.app/bids')
             },
             {
                 path: '/myBids',
@@ -56,12 +56,12 @@ const router = createBrowserRouter([
             {
                 path: '/jobDetail/:id',
                 element: <PrivateRouter><JobDetails></JobDetails></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/jobDetail/${params.id}`,{credentials:'include'})
+                loader: ({ params }) => fetch(`https://full-stack-website-marketplace-server.vercel.app/jobDetail/${params.id}`,{credentials:'include'})
             },
             {
                 path:'/updateJob/:id',
                 element:<UpdateJob></UpdateJob>,
-                loader: ({ params }) => fetch(`http://localhost:5000/updateJob/${params.id}`)
+                loader: ({ params }) => fetch(`https://full-stack-website-marketplace-server.vercel.app/updateJob/${params.id}`)
             }
         ]
     },

@@ -5,7 +5,7 @@ const useBids = () => {
     const { data, isLoading, isFetching, refetch } = useQuery({
         queryKey: ['bidsData'],
         queryFn: async () => {
-            const data = await fetch('http://localhost:5000/bids', {credentials: 'include'});
+            const data = await fetch('https://full-stack-website-marketplace-server.vercel.app/bids', {credentials: 'include'});
             return await data.json();
         }
     })

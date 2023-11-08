@@ -55,7 +55,7 @@ const UpdateJob = () => {
 
         }
 
-        fetch(`http://localhost:5000/updateJob/${data._id}`, {
+        fetch(`https://full-stack-website-marketplace-server.vercel.app/updateJob/${data._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

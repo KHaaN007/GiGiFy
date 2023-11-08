@@ -30,7 +30,7 @@ const MyBids = () => {
 
         }
 
-        fetch(`http://localhost:5000/updateBidReq/${id}`, {
+        fetch(`https://full-stack-website-marketplace-server.vercel.app/updateBidReq/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -48,13 +48,13 @@ const MyBids = () => {
 
     return (
         <div>
-            <h2 className='text-center text-2xl font-semibold'>This My Bids Page</h2>
+      
             {/* <!-- component --> */}
             <div className="bg-white p-8 rounded-md w-full">
                 <div className=" flex items-center justify-between pb-6">
                     <div>
-                        <h2 className="text-gray-600 font-semibold">Bidding Jobs</h2>
-                        <span className="text-xs">All Bids</span>
+                        <h2 className="text-gray-600 font-semibold text-2xl">Bidding Jobs</h2>
+                       
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="flex bg-gray-50 items-center p-2 rounded-md">
@@ -105,11 +105,7 @@ const MyBids = () => {
 
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <div className="flex items-center">
-                                                    <div className="flex-shrink-0 w-10 h-10">
-                                                        <img className="w-full h-full rounded-full"
-                                                            src={user.photoUrl}
-                                                            alt="" />
-                                                    </div>
+                                                    
                                                     <div className="ml-3">
                                                         <p className="text-gray-900 whitespace-no-wrap">
                                                             {bid.userEmail}

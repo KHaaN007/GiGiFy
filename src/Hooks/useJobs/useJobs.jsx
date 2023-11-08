@@ -6,7 +6,7 @@ const useJobs = () => {
     const { data, isLoading, isFetching, refetch } = useQuery({
         queryKey: ['jobsData'],
         queryFn: async () => {
-            const data = await fetch('http://localhost:5000/jobs',{credentials : 'include'});
+            const data = await fetch('https://full-stack-website-marketplace-server.vercel.app/jobs');
             return await data.json();
         }
     })

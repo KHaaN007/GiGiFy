@@ -63,13 +63,13 @@ const AuthProvider = ({ children }) => {
 
 
 
-                axios.post('http://localhost:5000/jwt', { email: currentUser.email }, { withCredentials: true })
+                axios.post('https://full-stack-website-marketplace-server.vercel.app/jwt', { email: currentUser.email }, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                     })
             }
             else {
-                axios.post('http://localhost:5000/logout', {}, { withCredentials: true })
+                axios.post('https://full-stack-website-marketplace-server.vercel.app/logout', {}, { withCredentials: true })
                     .then(res => res.data)
             }
         });
