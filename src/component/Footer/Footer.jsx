@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return (
         <div>
@@ -25,35 +27,38 @@ const Footer = () => {
                                 <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
                             </li>
                             <li>
-                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
-                            </li>
-                            <li>
-                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Contact</a>
                             </li>
                         </ul>
 
                         <ul className="list-unstyled">
                             <li>
-                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-xl" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-xl" href="https://www.creative-tim.com/presentation?ref=njs-profile">LEGAL</a>
                             </li>
                             <li>
-                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Privacy Policy</a>
                             </li>
                             <li>
-                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
-                            </li>
-                            <li>
-                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                                <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Terms & Conditions</a>
                             </li>
                         </ul>
                     </div>
 
-                    <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
+
 
                     <div className="flex items-center justify-between">
-                        <a href="#">
-                            <img className="w-32" src="https://i.ibb.co/thRPLrS/Beige-and-Black-Modern-Handwritten-Art-Design-Animated-Logo-removebg-preview-1.png" alt="" />
-                        </a>
+                        <div className="felx items-center">
+                            <a href="#">
+                                <img className="w-32" src="https://i.ibb.co/thRPLrS/Beige-and-Black-Modern-Handwritten-Art-Design-Animated-Logo-removebg-preview-1.png" alt="" />
+                            </a>
+                                <Link
+                                    to='/'
+                                    href="#"
+                                    className="mr-5 block cursor-pointer  font-serif lg:text-3xl md:text-3xl text-2xl text-white  font-medium leading-relaxed text-inherit antialiased"
+                                >
+                                    GiGiFy
+                                </Link>
+                        </div>
                         <div className="flex gap-4 hover:cursor-pointer">
                             <img src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg" width="30" height="30" alt="fb" />
                             <img src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg" width="30" height="30" alt="tw" />
@@ -61,10 +66,26 @@ const Footer = () => {
                             <img src="https://www.svgrepo.com/show/94698/github.svg" className="" width="30" height="30" alt="gt" />
                             <img src="https://www.svgrepo.com/show/22037/path.svg" width="30" height="30" alt="pn" />
                             <img src="https://www.svgrepo.com/show/28145/linkedin.svg" width="30" height="30" alt="in" />
-                           
+
+                        </div>
+
+                        <div>
+                            <div className="container mx-auto flex flex-col items-center">
+                                <div className="text-center">
+                                    <p className="text-xl font-bold">Office Address</p>
+                                    <p className="mt-2">Level-4, 34, Awal Centre, Banani, Dhaka</p>
+                                </div>
+                                <div className="mt-2">
+                                    <p className="text-xl">
+                                        Email: <a href="https://mail.google.com/mail/u/0/">md.amanakhan007@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
+                    <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                    <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com" target="_blank" className="hover:underline">GiGiFy™</a>. All Rights Reserved.
+                    </span>
                 </div>
             </footer>
         </div>

@@ -79,9 +79,11 @@ const NavBar = () => {
                         GiGiFy
                     </Link>
 
+                    <Link to='/'>
                     <div className='flex justify-center items-center text-center'>
                         <img className='w-20' src="https://i.ibb.co/thRPLrS/Beige-and-Black-Modern-Handwritten-Art-Design-Animated-Logo-removebg-preview-1.png" alt="" />
                     </div>
+                    </Link>
                 </div>
                 <div className="lg:mr-96">
                     <div className="dropdown flex flex-col">
