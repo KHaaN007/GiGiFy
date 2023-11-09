@@ -3,12 +3,13 @@ import useBids from "../../Hooks/useBids/useBids";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Loading from "../../RowCssComponent/Loading/Loading";
 import ShadowBtn from "../../RowCssComponent/ShadowBtn/ShadowBtn";
+import axios from "axios";
 
 const MyBids = () => {
     const { user } = useContext(AuthContext)
 
 
-    const { data, isLoading } = useBids()
+    const { data, isLoading, refetch } = useBids()
 
 
 
@@ -21,40 +22,35 @@ const MyBids = () => {
 
 
     const handleComplite = id => {
-
-        const status = 'Complite'
-
+        const status = 'Complite';
 
         const updateBid = {
             status
+        };
 
-        }
+        axios.patch(`https://full-stack-website-marketplace-server.vercel.app/updateBidReq/${id}`, updateBid)
+            .then(response => {
+                if (response.data) {
+                    return refetch()
+                }
+                console.log(response.data)
+            })
+            .catch(error => console.error(error));
+    };
 
-        fetch(`https://full-stack-website-marketplace-server.vercel.app/updateBidReq/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(updateBid)
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-
-
-    }
 
 
 
 
     return (
         <div>
-      
+
             {/* <!-- component --> */}
             <div className="bg-white p-8 rounded-md w-full">
                 <div className=" flex items-center justify-between pb-6">
                     <div>
                         <h2 className="text-gray-600 font-semibold text-2xl">Bidding Jobs</h2>
-                       
+
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="flex bg-gray-50 items-center p-2 rounded-md">
@@ -105,7 +101,7 @@ const MyBids = () => {
 
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <div className="flex items-center">
-                                                    
+
                                                     <div className="ml-3">
                                                         <p className="text-gray-900 whitespace-no-wrap">
                                                             {bid.userEmail}
@@ -126,7 +122,13 @@ const MyBids = () => {
                                                     className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                                     <span aria-hidden
                                                         className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                                    <span className="relative">{bid.status}</span>
+                                                    <span className="relative">
+                                                        {
+                                                            bid.status === 'Rejected' ?
+                                                            "Canceled"
+                                                            :
+                                                            bid.status
+                                                        }</span>
                                                 </span>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">

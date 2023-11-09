@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AddJob = () => {
-const goto =useNavigate()
+    const goto = useNavigate()
 
     const { user } = useContext(AuthContext)
 
@@ -42,26 +42,40 @@ const goto =useNavigate()
         console.log(job);
 
 
-        fetch('https://full-stack-website-marketplace-server.vercel.app/job', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(job)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.insertedId) {
-                    Swal.fire(
-                        'Login Successfully!',
-                        'Welcome to GiGiFy.',
-                        'success',
-                        goto('/myPostedJobs')
-                        )
-                }
-            })
 
+
+
+
+
+
+
+
+
+
+
+        Swal.fire({
+            title: 'Added Job',
+            text: "Want To Check your Posted Job ?",
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ok!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+
+                fetch('https://full-stack-website-marketplace-server.vercel.app/job', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    },
+                    body: JSON.stringify(job)
+                }).then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        goto('/myPostedJobs')
+                    })
+            }
+        })
 
 
     }

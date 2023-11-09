@@ -29,6 +29,17 @@ const JobDetails = () => {
         }
 
 
+
+
+        Swal.fire({
+            title: 'Added Bid!',
+            text: "Want To Check your Bids ?",
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ok!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
         fetch('https://full-stack-website-marketplace-server.vercel.app/bid', {
             method: 'POST',
             headers: {
@@ -39,17 +50,18 @@ const JobDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
-                    Swal.fire(
+                // if (data.insertedId) {
+                //     Swal.fire(
 
-                        'Added Bid!',
-                        'Added Your Bid Succesfully.',
-                        'success',
-                        goto('/myBids')
-                    )
-                }
+                //         'Added Bid!',
+                //         'Added Your Bid Succesfully.',
+                //         'success',
+                //         )
+                //     }
+                    goto('/myBids')
             })
-
+        }
+    })
 
 
 

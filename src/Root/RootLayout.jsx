@@ -9,10 +9,10 @@ const RootLayout = () => {
 
     useEffect(() => {
         if (location.pathname === '/') {
-            document.title = `GiGiFy || Home`
+            document.title = `GiGiFy | Home`
         }
         else {
-            document.title = `GiGiFy ${location.pathname.replace('/', ' || ')}`
+            document.title = `GiGiFy ${location.pathname.replace('/', ' | ')}`
         }
     }, [location.pathname])
 

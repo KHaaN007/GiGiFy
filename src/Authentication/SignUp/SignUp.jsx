@@ -96,7 +96,7 @@ const SignUp = () => {
                     </svg> */}
                     <img className="w-32" src="https://i.ibb.co/thRPLrS/Beige-and-Black-Modern-Handwritten-Art-Design-Animated-Logo-removebg-preview-1.png" alt="" />
 
-                    <div className="bg-white shadow-2xl rounded-xl lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
+                    <div className="bg-white shadow-2xl rounded-xl lg:w-1/3  md:w-1/2 w-full p-10 mt-16 relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 bg-clip-padding bg-opacity-60 border border-gray-200">
                         <p  className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Create your account</p>
                         <p  className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Have an account? <Link 
                         to='/login'

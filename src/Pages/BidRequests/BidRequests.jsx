@@ -3,12 +3,15 @@ import useBids from "../../Hooks/useBids/useBids";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import ShadowBtn from "../../RowCssComponent/ShadowBtn/ShadowBtn";
 import Loading from "../../RowCssComponent/Loading/Loading";
+import StepBar from "../../component/StepBar/StepBar";
+import axios from "axios";
 // import Swal from "sweetalert2";
+
 
 const BidRequests = () => {
 
 
-    const { data, isLoading } = useBids()
+    const { data, isLoading, refetch } = useBids()
     const { user } = useContext(AuthContext)
     const userEmail = user?.email
 
@@ -23,56 +26,50 @@ const BidRequests = () => {
 
 
 
+
     const handleAccept = id => {
         console.log(id);
-   
-        const status = 'In progress'
 
+        const status = 'In progress';
 
         const updateBid = {
             status
+        };
 
-        }
+        axios.patch(`https://full-stack-website-marketplace-server.vercel.app/updateBidReq/${id}`, updateBid)
+            .then(response => {
+                if (response.data) {
+                    return refetch()
+                }
+                console.log(response.data)
+            })
 
-        fetch(`https://full-stack-website-marketplace-server.vercel.app/updateBidReq/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(updateBid)
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
+            .catch(error => console.error(error));
+    };
 
 
-    }
 
 
 
 
     const handleReject = id => {
         console.log(id);
-   
-        const status = 'Rejected'
 
+        const status = 'Rejected';
 
         const updateBid = {
             status
+        };
 
-        }
-
-        fetch(`https://full-stack-website-marketplace-server.vercel.app/updateBidReq/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(updateBid)
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-
-
-    }
+        axios.patch(`https://full-stack-website-marketplace-server.vercel.app/updateBidReq/${id}`, updateBid)
+            .then(response => {
+                if (response.data) {
+                    return refetch()
+                }
+                console.log(response.data)
+            })
+            .catch(error => console.error(error));
+    };
 
 
 
@@ -172,26 +169,34 @@ const BidRequests = () => {
                                                         <span className="relative">{bid.status}</span>
                                                     </span>
                                                 </td>
+                                                {
+                                                    bid.status ==='Pending' ?
+
                                                 <td className="px-5 py-5 gap-5 border-b flex flex-row w-52 border-gray-200 bg-white text-sm">
-                                                    <button 
-                                                    onClick={() => handleAccept(bid._id)}
-                                                    className="text-gray-900 whitespace-no-wrap shadow__btn">
+                                                    <button
+                                                        onClick={() => handleAccept(bid._id)}
+                                                        className="text-gray-900 whitespace-no-wrap shadow__btn">
                                                         Accept
                                                         <ShadowBtn></ShadowBtn>
                                                     </button>
-                                                    <button 
-                                                    onClick={() => handleReject(bid._id)}
-                                                    className="text-gray-900 whitespace-no-wrap shadow__btn">
+                                                    <button
+                                                        onClick={() => handleReject(bid._id)}
+                                                        className="text-gray-900 whitespace-no-wrap shadow__btn">
                                                         Reject
                                                         <ShadowBtn></ShadowBtn>
                                                     </button>
                                                 </td>
+                                                :
+                                                <td>
+                                                    <StepBar></StepBar>
+                                                </td>
+                                                }
 
                                             </tr>)
                                         }
                                     </tbody>
                                 </table>
-                             
+
                             </div>
                         </div>
                     </div>

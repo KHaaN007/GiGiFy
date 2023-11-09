@@ -5,7 +5,7 @@ const TrustedBy = () => {
         <div className="buttonOne" >
             <ButtonOne></ButtonOne>
             {/* <!-- Container for demo purpose --> */}
-            <div className="container mx-auto lg:my-0 my-64 m md:px-6">
+            <div className="container mx-auto lg:my-0 my-64 m md:px-6 " >
                 {/* <!-- Section: Design Block --> */}
                 <section className=" text-center">
                     <div className=" flex items-center h-screen md:px-12">
